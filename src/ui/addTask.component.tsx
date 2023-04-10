@@ -10,7 +10,7 @@ const AddTask = () => {
   const [, addTask] = useAtom(addTaskAtom);
   return (
     <form
-      className='flex gap-2 rounded-md w-full'
+      className='flex gap-2 rounded-md w-full my-3'
       onSubmit={(e) => {
         e.preventDefault();
         addTask();

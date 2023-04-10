@@ -1,6 +1,8 @@
 import React from 'react';
 import { ITask } from '../../tasksStore';
 import { useAtom } from 'jotai';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import {
   toggleTaskAtom,
   updateTaskAtom,
@@ -20,17 +22,47 @@ const TaskItem: React.FC<ITaskProps> = ({ taskData }: ITaskProps) => {
   const [, removeTask] = useAtom(removeTaskAtom);
 
   return (
-    <li className='flex gap-2 hover:-translate-y-0.5 transition'>
-      <input
-        className='flex-1 border rounded border-zinc-800 hover:border-zinc-500 bg-zinc-800 text-zinc-50  px-2 w-full'
-        value={title}
-        onChange={(e) => updateTask({ id: id, title: e.target.value })}
-      />
-      <Button handler={() => toggleTask(id)}>
-        {completed ? 'undone' : 'done'}
-      </Button>
-      <Button handler={() => removeTask(id)}>delete</Button>
-    </li>
+    <AnimatePresence>
+      <motion.li
+        className='flex gap-2'
+        initial='hidden'
+        animate='revealed'
+        exit='deleted'
+        whileHover='hovered'
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 16,
+          },
+          revealed: {
+            opacity: 1,
+            y: 0,
+          },
+          deleted: {
+            opacity: 0,
+            scale: 0.5,
+          },
+          hovered: {
+            scale: 1.02,
+          },
+        }}
+        transition={{
+          type: 'spring',
+          stiffness: 330,
+          damping: 35,
+        }}
+      >
+        <input
+          className='flex-1 border rounded border-zinc-800 hover:border-zinc-500 bg-zinc-800 text-zinc-50  px-2 w-full'
+          value={title}
+          onChange={(e) => updateTask({ id: id, title: e.target.value })}
+        />
+        <Button handler={() => toggleTask(id)}>
+          {completed ? 'undone' : 'done'}
+        </Button>
+        <Button handler={() => removeTask(id)}>delete</Button>
+      </motion.li>
+    </AnimatePresence>
   );
 };
 

@@ -1,23 +1,31 @@
+import { motion } from 'framer-motion';
+
 interface IButtonProps {
   children: string | JSX.Element | JSX.Element[];
   handler?: () => void;
   hoverColor?: string;
 }
 
-interface HoverColor {
-  default: 'zinc-700';
-  success: 'emerald-700';
-  alert: 'red-700';
-}
+const HoverColor = {
+  default: 'zinc',
+  success: 'emerald',
+  alert: 'red',
+};
 
-const Button = ({ children, handler }: IButtonProps) => {
+const Button = ({
+  children,
+  handler,
+  hoverColor = HoverColor.default,
+}: IButtonProps) => {
   return (
-    <button
-      className={`px-2 py-1 rounded border bg-zinc-800 border-zinc-800 hover:border-zinc-600 transition`}
+    <motion.button
+      initial={{ scale: 1 }}
+      whileTap={{ scale: 0.95 }}
+      className={`text-sm px-2 py-1 rounded border bg-zinc-800 border-zinc-800 hover:border-${hoverColor}-600 `}
       onClick={handler}
     >
       {children}
-    </button>
+    </motion.button>
   );
 };
 
