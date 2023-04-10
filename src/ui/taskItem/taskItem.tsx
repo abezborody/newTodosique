@@ -7,7 +7,7 @@ import {
   removeTaskAtom,
 } from '../../tasksStore';
 
-import './taskItem.css';
+import Button from '../button/button.component';
 
 interface ITaskProps {
   taskData: ITask;
@@ -20,17 +20,16 @@ const TaskItem: React.FC<ITaskProps> = ({ taskData }: ITaskProps) => {
   const [, removeTask] = useAtom(removeTaskAtom);
 
   return (
-    <li className='task__container'>
+    <li className='flex gap-2 hover:-translate-y-0.5 transition'>
       <input
+        className='flex-1 border rounded border-zinc-800 hover:border-zinc-500 bg-zinc-800 text-zinc-50  px-2 w-full'
         value={title}
         onChange={(e) => updateTask({ id: id, title: e.target.value })}
       />
-      <button className='task-button__check' onClick={() => toggleTask(id)}>
+      <Button handler={() => toggleTask(id)}>
         {completed ? 'undone' : 'done'}
-      </button>
-      <button className='task-button__delete' onClick={() => removeTask(id)}>
-        delete
-      </button>
+      </Button>
+      <Button handler={() => removeTask(id)}>delete</Button>
     </li>
   );
 };

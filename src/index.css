@@ -6,4 +6,8 @@
   html {
     font-family: JetBrains Mono, system-ui, sans-serif;
   }
+
+  body {
+    @apply h-screen py-0 my-0 bg-zinc-900 text-zinc-50;
+  }
 }

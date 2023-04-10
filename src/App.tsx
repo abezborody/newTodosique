@@ -4,8 +4,8 @@ import AddTask from './ui/addTask.component';
 
 const App: React.FunctionComponent = () => {
   return (
-    <div className='flex-col mx-auto'>
-      <h1 className='text-lg font-bold'>todosique 2.0</h1>
+    <div className='container flex flex-col gap-2 items-center mx-auto'>
+      <h1 className='text-xl font-bold py-4'>todosique 2.0</h1>
       <ControlsBtns />
       <AddTask />
       <TasksList />

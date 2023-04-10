@@ -16,10 +16,10 @@ const ControlsBtns = () => {
     setTasks([]);
   };
   return (
-    <div className='buttons-container'>
-      <Button onClick={addTaskHandler}>add task</Button>
-      <Button onClick={loadTemplateHandler}>load template</Button>
-      <Button onClick={clearTasksHandler}>clear tasks</Button>
+    <div className='flex gap-1'>
+      <Button handler={addTaskHandler}>add task</Button>
+      <Button handler={loadTemplateHandler}>load template</Button>
+      <Button handler={clearTasksHandler}>clear tasks</Button>
     </div>
   );
 };

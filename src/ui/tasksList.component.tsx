@@ -18,9 +18,9 @@ interface ITaskListProps {
 const TasksList: React.FunctionComponent = () => {
   const [tasks] = useAtom(tasksAtom);
   return (
-    <div>
-      <h2>Tasks:</h2>
-      <ul className='tasks-list__container'>
+    <div className=' w-full'>
+      {tasks.length ? <h2 className='my-2 text-lg font-bold'>Tasks:</h2> : ''}
+      <ul className='flex flex-col gap-1'>
         {tasks.length ? (
           tasks.map((task: ITask) => <TaskItem key={task.id} taskData={task} />)
         ) : (
