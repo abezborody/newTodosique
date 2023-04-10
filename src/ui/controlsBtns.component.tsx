@@ -1,6 +1,8 @@
 import { useAtom } from 'jotai';
 import { tasksAtom, ITask } from '../tasksStore';
 
+import Button from './button/button.component';
+
 const ControlsBtns = () => {
   const [, setTasks] = useAtom(tasksAtom);
   const addTaskHandler = () => {};
@@ -15,9 +17,9 @@ const ControlsBtns = () => {
   };
   return (
     <div className='buttons-container'>
-      <button onClick={addTaskHandler}>add task</button>
-      <button onClick={loadTemplateHandler}>load template</button>
-      <button onClick={clearTasksHandler}>clear tasks</button>
+      <Button onClick={addTaskHandler}>add task</Button>
+      <Button onClick={loadTemplateHandler}>load template</Button>
+      <Button onClick={clearTasksHandler}>clear tasks</Button>
     </div>
   );
 };

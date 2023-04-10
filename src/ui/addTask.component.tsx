@@ -1,8 +1,6 @@
 import { useAtom } from 'jotai';
 import { addTaskAtom, newTaskAtom } from '../tasksStore';
 
-import '../App.css';
-
 const AddTask = () => {
   const [newTask, setNewTask] = useAtom(newTaskAtom);
   const [, addTask] = useAtom(addTaskAtom);
@@ -22,7 +20,7 @@ const AddTask = () => {
         type='text'
         placeholder='Title of task'
       />
-      <button>Create</button>
+      <button>+</button>
     </form>
   );
 };

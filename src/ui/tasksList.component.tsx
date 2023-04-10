@@ -11,8 +11,6 @@ import { ITask } from '../tasksStore';
 import React from 'react';
 import NoTasksMessage from './noTasksMessage.component';
 
-import '../App.css';
-
 interface ITaskListProps {
   tasks: ITask[];
 }
