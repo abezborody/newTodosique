@@ -17,7 +17,11 @@ const Button = ({
     <motion.button
       initial={{ scale: 1 }}
       whileTap={{ scale: 0.95 }}
-      className={`text-sm px-2 py-1 rounded border bg-zinc-800 border-zinc-800 hover:border-${buttonHoverType}-600 `}
+      className={
+        'text-sm px-2 py-1 rounded border bg-zinc-800 border-zinc-800 hover:border-' +
+        buttonHoverType +
+        '-600'
+      }
       onClick={handler}
     >
       {children}
