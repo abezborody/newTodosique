@@ -16,11 +16,12 @@ const Button = ({
   handler,
   buttonHoverType = 'default',
 }: IButtonProps) => {
+  let hoverColor = hoverColors[buttonHoverType];
   return (
     <motion.button
       initial={{ scale: 1 }}
       whileTap={{ scale: 0.95 }}
-      className={`text-sm px-2 py-1 rounded border bg-zinc-800 border-zinc-800 hover:${hoverColors[buttonHoverType]}`}
+      className={`text-sm px-2 py-1 rounded border bg-zinc-800 border-zinc-800 hover:${hoverColor}`}
       onClick={handler}
     >
       {children}
