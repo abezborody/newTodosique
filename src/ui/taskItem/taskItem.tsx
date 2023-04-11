@@ -59,7 +59,7 @@ const TaskItem: React.FC<ITaskProps> = ({ taskData }: ITaskProps) => {
           value={title}
           onChange={(e) => updateTask({ id: id, title: e.target.value })}
         />
-        <Button buttonHoverType='green' handler={() => toggleTask(id)}>
+        <Button buttonHoverType='emerald' handler={() => toggleTask(id)}>
           {completed ? 'undone' : 'done'}
         </Button>
         <Button buttonHoverType='red' handler={() => removeTask(id)}>
