@@ -22,7 +22,7 @@ const AddTask = () => {
         type='text'
         placeholder='Title of task'
       />
-      <Button>
+      <Button buttonHoverType='emerald'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           height='24'
