@@ -18,7 +18,7 @@ const NoTasksMessage = () => {
           exit='hide'
           variants={variants}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className='h-full text-center lg:text-xl my-4 py-4 px-2 rounded-md border border-dashed border-zinc-600 sm:text-base'
+          className='h-full text-center lg:text-xl my-4 py-4 px-2 rounded-md border border-dashed border-zinc-600 sm:text-base cursor-default'
         >
           There is no tasks at this moment... Try add some!
         </motion.div>
