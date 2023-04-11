@@ -7,7 +7,7 @@ interface IButtonProps {
 }
 
 export enum hoverType {
-  default = 'border',
+  default = 'border-zinc-600',
   success = 'border-emerald-600',
   alert = 'border-red-600',
 }
@@ -17,15 +17,12 @@ const Button = ({
   handler,
   buttonHoverType = hoverType.default,
 }: IButtonProps) => {
+  const hoverColor = buttonHoverType;
   return (
     <motion.button
       initial={{ scale: 1 }}
       whileTap={{ scale: 0.95 }}
-      className={`text-sm px-2 py-1 rounded border bg-zinc-800 border-zinc-800 hover:${
-        buttonHoverType === hoverType.default
-          ? hoverType.default
-          : buttonHoverType
-      }`}
+      className={`text-sm px-2 py-1 rounded border bg-zinc-800 border-zinc-800 hover:${buttonHoverType}`}
       onClick={handler}
     >
       {children}
