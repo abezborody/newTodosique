@@ -64,3 +64,5 @@ export const removeTaskAtom = atom(
     set(tasksAtom, removeTask(get(tasksAtom), id));
   }
 );
+
+export const addTaskIsOpen = atom<boolean>(false);

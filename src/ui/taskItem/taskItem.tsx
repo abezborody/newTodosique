@@ -21,6 +21,24 @@ const TaskItem: React.FC<ITaskProps> = ({ taskData }: ITaskProps) => {
   const [, updateTask] = useAtom(updateTaskAtom);
   const [, removeTask] = useAtom(removeTaskAtom);
 
+  const states = {
+    hidden: {
+      opacity: 0,
+      y: 16,
+    },
+    revealed: {
+      opacity: 1,
+      y: 0,
+    },
+    deleted: {
+      opacity: 0,
+      scale: 0.5,
+    },
+    hovered: {
+      scale: 1.02,
+    },
+  };
+
   return (
     <AnimatePresence>
       <motion.li
@@ -29,28 +47,12 @@ const TaskItem: React.FC<ITaskProps> = ({ taskData }: ITaskProps) => {
         animate='revealed'
         exit='deleted'
         whileHover='hovered'
-        variants={{
-          hidden: {
-            opacity: 0,
-            y: 16,
-          },
-          revealed: {
-            opacity: 1,
-            y: 0,
-          },
-          deleted: {
-            opacity: 0,
-            scale: 0.5,
-          },
-          hovered: {
-            scale: 1.02,
-          },
-        }}
         transition={{
           type: 'spring',
-          stiffness: 330,
-          damping: 35,
+          stiffness: 350,
+          damping: 25,
         }}
+        variants={states}
       >
         <input
           className='flex-1 border rounded border-zinc-800 hover:border-zinc-500 bg-zinc-800 text-zinc-50  px-2 w-full'
