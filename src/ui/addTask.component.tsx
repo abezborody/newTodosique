@@ -1,17 +1,17 @@
-import { useAtom } from 'jotai';
-import { addTaskAtom, newTaskAtom } from '../tasksStore';
-
-import { ReactSVG } from 'react-svg';
+import { useAtom, useSetAtom } from 'jotai';
+import { addTaskAtom, newTaskAtom, addTaskIsOpen } from '../tasksStore';
 
 import Button from './button/button.component';
 
 const AddTask = () => {
   const [newTask, setNewTask] = useAtom(newTaskAtom);
   const [, addTask] = useAtom(addTaskAtom);
+  const setIsOpen = useSetAtom(addTaskIsOpen);
   return (
     <form
       className='flex gap-2 rounded-md w-full my-3'
       onSubmit={(e) => {
+        setIsOpen(false);
         e.preventDefault();
         addTask();
       }}

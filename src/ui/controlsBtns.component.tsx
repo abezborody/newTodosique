@@ -15,12 +15,14 @@ const ControlsBtns = () => {
     }
   };
   const loadTemplateHandler = () => {
+    setIsOpen(false);
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then((res) => res.json())
       .then((data) => data.slice(0, 5))
       .then((tasks: ITask[]) => setTasks(tasks));
   };
   const clearTasksHandler = () => {
+    setIsOpen(false);
     setTasks([]);
   };
   return (
