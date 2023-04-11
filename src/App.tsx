@@ -24,7 +24,7 @@ const App: React.FunctionComponent = () => {
 
   return (
     <div className='h-full container flex flex-col gap-1 items-center mx-auto px-2'>
-      <h1 className='text-xl font-bold pt-4 pb-2'>todosique 2.0</h1>
+      <h1 className='text-xl font-bold pt-4 pb-2'>Daily to-do list</h1>
       <ControlsBtns />
       <motion.div
         initial={states.shiftUp}
