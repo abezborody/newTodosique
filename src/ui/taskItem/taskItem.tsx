@@ -9,7 +9,7 @@ import {
   removeTaskAtom,
 } from '../../tasksStore';
 
-import Button, { hoverType } from '../button/button.component';
+import Button from '../button/button.component';
 
 interface ITaskProps {
   taskData: ITask;
@@ -55,7 +55,9 @@ const TaskItem: React.FC<ITaskProps> = ({ taskData }: ITaskProps) => {
         variants={states}
       >
         <input
-          className='flex-1 border rounded border-zinc-800 hover:border-zinc-500 bg-zinc-800 text-zinc-50  px-2 w-full'
+          className={`flex-1 ${completed ? 'ring-1' : ''} ${
+            completed ? 'ring-emerald-600' : ''
+          }  border rounded border-zinc-800 hover:border-zinc-500 bg-zinc-800 text-zinc-50  px-2 w-full transition`}
           value={title}
           onChange={(e) => updateTask({ id: id, title: e.target.value })}
         />
@@ -71,11 +73,3 @@ const TaskItem: React.FC<ITaskProps> = ({ taskData }: ITaskProps) => {
 };
 
 export default TaskItem;
-
-// Task example
-// {
-//   "userId": 1,
-//   "id": 2,
-//   "title": "quis ut nam facilis et officia qui",
-//   "completed": false
-// },

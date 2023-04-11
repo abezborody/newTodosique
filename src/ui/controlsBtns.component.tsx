@@ -1,6 +1,6 @@
-import Button, { hoverType } from './button/button.component';
+import Button from './button/button.component';
 import { ITask } from '../tasksStore';
-import { useAtom, useAtomValue, useSetAtom } from 'jotai';
+import { useAtom } from 'jotai';
 import { addTaskIsOpen, tasksAtom } from '../tasksStore';
 
 const ControlsBtns = () => {
