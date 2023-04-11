@@ -9,7 +9,7 @@ import {
   removeTaskAtom,
 } from '../../tasksStore';
 
-import Button from '../button/button.component';
+import Button, { hoverType } from '../button/button.component';
 
 interface ITaskProps {
   taskData: ITask;
@@ -59,10 +59,16 @@ const TaskItem: React.FC<ITaskProps> = ({ taskData }: ITaskProps) => {
           value={title}
           onChange={(e) => updateTask({ id: id, title: e.target.value })}
         />
-        <Button buttonHoverType='emerald' handler={() => toggleTask(id)}>
+        <Button
+          buttonHoverType={hoverType.success}
+          handler={() => toggleTask(id)}
+        >
           {completed ? 'undone' : 'done'}
         </Button>
-        <Button buttonHoverType='red' handler={() => removeTask(id)}>
+        <Button
+          buttonHoverType={hoverType.alert}
+          handler={() => removeTask(id)}
+        >
           delete
         </Button>
       </motion.li>
