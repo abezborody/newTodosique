@@ -1,7 +1,7 @@
 import { useAtom, useSetAtom } from 'jotai';
 import { addTaskAtom, newTaskAtom, addTaskIsOpen } from '../tasksStore';
 
-import Button, { hoverType } from './button/button.component';
+import Button from './button/button.component';
 
 const AddTask = () => {
   const [newTask, setNewTask] = useAtom(newTaskAtom);
@@ -22,7 +22,7 @@ const AddTask = () => {
         type='text'
         placeholder='Title of task'
       />
-      <Button buttonHoverType={hoverType.success}>
+      <Button buttonHoverType='success'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           height='24'

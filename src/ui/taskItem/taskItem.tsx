@@ -59,16 +59,10 @@ const TaskItem: React.FC<ITaskProps> = ({ taskData }: ITaskProps) => {
           value={title}
           onChange={(e) => updateTask({ id: id, title: e.target.value })}
         />
-        <Button
-          buttonHoverType={hoverType.success}
-          handler={() => toggleTask(id)}
-        >
+        <Button buttonHoverType='success' handler={() => toggleTask(id)}>
           {completed ? 'undone' : 'done'}
         </Button>
-        <Button
-          buttonHoverType={hoverType.alert}
-          handler={() => removeTask(id)}
-        >
+        <Button buttonHoverType='alert' handler={() => removeTask(id)}>
           delete
         </Button>
       </motion.li>
