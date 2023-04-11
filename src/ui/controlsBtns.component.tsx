@@ -28,8 +28,8 @@ const ControlsBtns = () => {
   return (
     <div className='flex gap-1 z-10'>
       <Button handler={addTaskHandler}>add task</Button>
-      <Button handler={loadTemplateHandler}>load template</Button>
       <Button handler={clearTasksHandler}>clear tasks</Button>
+      <Button handler={loadTemplateHandler}>load template</Button>
     </div>
   );
 };

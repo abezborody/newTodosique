@@ -1,10 +1,9 @@
 import ControlsBtns from './ui/controlsBtns.component';
 import TasksList from './ui/tasksList.component';
 import AddTask from './ui/addTask.component';
-import { motion, motionValue, animate, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useAtom } from 'jotai';
 import { addTaskIsOpen } from './tasksStore';
-import { useEffect } from 'react';
 
 const App: React.FunctionComponent = () => {
   const [isOpen] = useAtom(addTaskIsOpen);

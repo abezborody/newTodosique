@@ -6,12 +6,10 @@ import Button from './button/button.component';
 const AddTask = () => {
   const [newTask, setNewTask] = useAtom(newTaskAtom);
   const [, addTask] = useAtom(addTaskAtom);
-  const setIsOpen = useSetAtom(addTaskIsOpen);
   return (
     <form
       className='flex gap-2 rounded-md w-full my-3'
       onSubmit={(e) => {
-        setIsOpen(false);
         e.preventDefault();
         addTask();
       }}
