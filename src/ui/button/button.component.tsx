@@ -5,17 +5,17 @@ interface IButtonProps {
   handler?: () => void;
   buttonHoverType?: 'default' | 'success' | 'alert';
 }
+const hoverColors = {
+  default: 'border-zinc-600',
+  success: 'border-emerald-600',
+  alert: 'border-red-600',
+};
 
 const Button = ({
   children,
   handler,
   buttonHoverType = 'default',
 }: IButtonProps) => {
-  const hoverColors = {
-    default: 'border-zinc-600',
-    success: 'border-emerald-600',
-    alert: 'border-red-600',
-  };
   return (
     <motion.button
       initial={{ scale: 1 }}
