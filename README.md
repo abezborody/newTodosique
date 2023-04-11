@@ -3,9 +3,7 @@
 ## Link to project: 
 https://majestic-figolla-291992.netlify.app/
 
-##Used stack: 
-
-Dillinger uses a number of open source projects to work properly:
+## Used stack: 
 
 - [ReactJS]
 - [TypeScript]
