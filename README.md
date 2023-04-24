@@ -1,6 +1,8 @@
 # Daily todo list by me (haha)
 
-[Link to project](https://majestic-figolla-291992.netlify.app/)
+[Link to project](https://daily-todo-bezborody.netlify.app/)
+
+![preview](todo-preview.gif)
 
 ## Used stack: 
 
